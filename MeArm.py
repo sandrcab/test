@@ -33,10 +33,10 @@ class MeArm(object):
                     _s("j4"):0.0}
     self._body = MultiLink()
     
-    _dh = {"d":[.2, .2, .0, .0],
+    _dh = {"d":[.5, .0, .0, .0],
          "theta":["s:j1","s:j2","s:j3","s:j4"],
-         "r":[.0, .0, .8, .8],
-         "alpha":[0.0, -90.0, .0, .0]
+         "r":[.0, .5, .5, .2],
+         "alpha":[-90.0, 0.0, .0, .0]
         }
     self._body.fromDH(_dh)
     self._body.compose(*self._joints.keys())
@@ -135,7 +135,7 @@ if __name__ == '__main__':
   arm = MeArm()
   #arm.clap()
   #Go up and left to grab something
-  arm.gotoPoint(5,1,9); 
+  arm.gotoPoint(-0.8,1,1.4); 
   #arm.closeGripper();
   #Go down, forward and right to drop it
   #arm.gotoPoint(.70,2.00,.10);
