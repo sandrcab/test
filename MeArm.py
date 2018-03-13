@@ -95,7 +95,7 @@ class MeArm(object):
     self.base(Q[0])
     self.shoulder(Q[1])
     self.elbow(Q[2])
-    self.clap(Q[3])
+    #self.clap(Q[3])
       
   def gotoPoint(self, tx, ty, tz, steps=1):
     """ Simple control loop that uses the Jacobian"""
