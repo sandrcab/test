@@ -135,7 +135,7 @@ if __name__ == '__main__':
   arm = MeArm()
   #arm.clap()
   #Go up and left to grab something
-  arm.gotoPoint(-.80,1.0,1.4); 
+  arm.gotoPoint(-2,1.8,2); 
   #arm.closeGripper();
   #Go down, forward and right to drop it
   #arm.gotoPoint(.70,2.00,.10);
