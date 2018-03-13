@@ -8,7 +8,7 @@ class ServoSB(object):
     """Pin number, min us output, max us output, min angle, max angle """ 
     self.pin = int(pin)
     self.minUS = 50
-    self.maxUS = 250
+    self.maxUS = 500
     self.minAngle = minAngle
     self.maxAngle = maxAngle
     self._configure()
