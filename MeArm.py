@@ -107,8 +107,6 @@ class MeArm(object):
       display(Q)
       
       # Draw current robot position
-      self._body.plotLinks()
-      plt.savefig("body_%d.png"%i)
       
       # Get position in 3D space (DK)
       pose = self._body.jointsToPosition(Q)
