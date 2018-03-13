@@ -18,7 +18,7 @@ class MeArm(object):
     DUMMY_VAL = 1,0,180 # Remove this!
     self.servos = {"base":ServoSB( 7,-90,90 ),
                   "shoulder":ServoSB( 11,0,90),
-                  "elbow":ServoSB(13,0,20),
+                  "elbow":ServoSB(13,0,45),
                   "grip":ServoSB( 15,0,90 )}
     
     # Create the body using multilink code and DH parameters
@@ -28,15 +28,15 @@ class MeArm(object):
          .80, #Elbow to wrist length
          .68] #Wrist to hand length
     self._joints = {_s("j1"):0.0, 
-                    _s("j2"):-45.0, 
+                    _s("j2"):0, 
                     _s("j3"):45.0, 
                     _s("j4"):0.0}
     self._body = MultiLink()
     
-    _dh = {"d":[.5, .0, .0, .0],
+    _dh = {"d":[.2, .2, .0, .0],
          "theta":["s:j1","s:j2","s:j3","s:j4"],
-         "r":[.0, .5, .5, .2],
-         "alpha":[-90.0, 0.0, .0, .0]
+         "r":[.0, .0, .8, .8],
+         "alpha":[0.0, -90.0, .0, .0]
         }
     self._body.fromDH(_dh)
     self._body.compose(*self._joints.keys())
@@ -95,7 +95,7 @@ class MeArm(object):
     self.base(Q[0])
     self.shoulder(Q[1])
     self.elbow(Q[2])
-    self.gripper(Q[3])
+    self.grip(Q[3])
       
   def gotoPoint(self, tx, ty, tz, steps=1):
     """ Simple control loop that uses the Jacobian"""
