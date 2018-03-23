@@ -18,8 +18,8 @@ class MeArm(object):
     DUMMY_VAL = 1,0,180 # Remove this!
     self.servos = {"base":ServoSB( 7,-90,90 ),
                   "shoulder":ServoSB( 11,0,90),
-                  "elbow":ServoSB(13,0,45),
-                  "grip":ServoSB( 15,0,90 )}
+                  "elbow":ServoSB(13,0,90),
+                  "grip":ServoSB( 15,0,45 )}
     
     # Create the body using multilink code and DH parameters
     _l = [.20, #Origin to base 
